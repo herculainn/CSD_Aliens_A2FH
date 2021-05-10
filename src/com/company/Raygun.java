@@ -42,10 +42,13 @@ public class Raygun {
         //TODO: Implement the method
         /*Returns true if the gun has a charge*/
 
+        return true; // 2021-05-10 AidanH - allow build
     }
 
     public boolean isFullyCharged() {
         //TODO: Implement the method
         /*Returns true if the gun is fully charged*/
+
+        return true; // 2021-05-10 AidanH - allow build
     }
 }
