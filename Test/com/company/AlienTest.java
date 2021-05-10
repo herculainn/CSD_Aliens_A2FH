@@ -24,7 +24,7 @@ public class AlienTest {
     public void testMiss() {
         Alien bob = new Alien(true, 100);
         bob.miss();
-        Assert.assertEquals(bob.setDodging(false), 99);
+        Assert.assertEquals(bob.getDodging(), false);
     }
 
 }
