@@ -117,10 +117,10 @@ public class RaygunTest {
                 currentCharge);
 
         // Act
-        boolean chargedOne = ray.isCharged();
+        boolean chargedOne = ray.isFullyCharged();
 
         ray.recharge();
-        boolean chargedTwo = ray.isCharged();
+        boolean chargedTwo = ray.isFullyCharged();
 
         // Assert
         Assert.assertFalse(chargedOne); // Before reaching full charge

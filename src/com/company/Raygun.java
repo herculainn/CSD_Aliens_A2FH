@@ -15,40 +15,41 @@ package com.company;
 
 public class Raygun {
     //Data members
-    private int mChrg; //The maximum charge the Raygun can hold
-    private int cChrg; //The current level of charge the Raygun has
+    private int maximumCharge; //The maximum charge the Raygun can hold
+    private int currentCharge; //The current level of charge the Raygun has
 
     //Class constructors
-    public Raygun(int mChrg, int cChrg) {
-        //TODO: Construct the Raygun object and initialise the attributes
+    public Raygun(int maximumCharge, int currentCharge) {
+        this.maximumCharge = maximumCharge;
+        this.currentCharge = currentCharge;
     }
 
-    // Methods
-    //TODO: Implement appropriate getters and setters for the class
+    public void fireAt(Alien alien) {
+        if (this.isCharged()) {
+            this.currentCharge -= 1;
 
-    public void fireAt(Alien a) {
-        //TODO: Implement the method
-        /*The gun should only fire if it is charged. Firing the gun will reduce the charge by 1. If the alien isDodging
-        * alien.miss() should be called, otherwise alien.hit */
-
+            if (alien.getDodging()) {
+                alien.miss();
+            } else {
+                alien.hit();
+            }
+        }
     }
 
     public void recharge() {
-        //TODO: Implement the method
-        /*Increases the current charge by 1*/
+        if (this.currentCharge < this.maximumCharge)
+            this.currentCharge += 1;
     }
 
     public boolean isCharged() {
-        //TODO: Implement the method
-        /*Returns true if the gun has a charge*/
-
-        return true; // 2021-05-10 AidanH - allow build
+        return this.currentCharge > 0;
     }
 
     public boolean isFullyCharged() {
-        //TODO: Implement the method
-        /*Returns true if the gun is fully charged*/
+        return this.currentCharge == this.maximumCharge;
+    }
 
-        return true; // 2021-05-10 AidanH - allow build
+    public int getCurrentCharge() {
+        return currentCharge;
     }
 }
